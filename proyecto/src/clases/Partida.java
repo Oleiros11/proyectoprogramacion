@@ -32,7 +32,10 @@ public class Partida {
 		public void eliminarPersonaje(String nombre) {
 			Iterator<Personaje> iterador=listaPersonajes.iterator();
 			while (iterador.hasNext()) {
-				String elemento=iterador.next();
+				Personaje personaje=iterador.next();
+				if(personaje.getNombre().equalsIgnoreCase(nombre)) {
+					iterador.remove();
+				}
 			}
 		}
 		
