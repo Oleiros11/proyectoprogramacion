@@ -16,7 +16,7 @@ public class Principal {
 		partida1.listarPersonajes();
 		System.out.println("¿Que personaje quieres elegir?");
 		String nombre=input.nextLine();
-		Personaje personaje=partida1.elegirPersonaje(nombre);
+		
 		input.close();
 	}
 
