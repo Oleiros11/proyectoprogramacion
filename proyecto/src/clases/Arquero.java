@@ -1,10 +1,10 @@
 package clases;
 
 public class Arquero extends Personaje {
-	int vida;
-	int mana;
-	int fuerza;
-	int defensa;
+	int vida=40;
+	int mana=60;
+	int fuerza=10;
+	int defensa=7;
 
 	public Arquero(String nombre, String clase) {
 		super(nombre, clase);

@@ -4,6 +4,7 @@ public class Personaje {
 	String nombre;
 	String clase;
 	int nivel=1;
+	int expNecesaria=100;
 	
 	public Personaje(String nombre, String clase) {
 		this.nombre=nombre;
@@ -40,6 +41,17 @@ public class Personaje {
 
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
+	}
+
+	
+
+	public int getExpNecesaria() {
+		return expNecesaria;
+	}
+
+
+	public void setExpNecesaria(int expNecesaria) {
+		this.expNecesaria = expNecesaria;
 	}
 
 

@@ -1,10 +1,10 @@
 package clases;
 
 public class Guerrero extends Personaje{
-	int vida;
-	int mana;
-	int fuerza;
-	int defensa;
+	int vida=50;
+	int mana=50;
+	int fuerza=15;
+	int defensa=10;
 
 	public Guerrero(String nombre, String clase) {
 		super(nombre, clase);

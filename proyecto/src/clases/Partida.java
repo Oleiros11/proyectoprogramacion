@@ -41,8 +41,48 @@ public class Partida {
 		
 	
 	public void listarPersonajes() {
-		for (Personaje e:listaPersonajes) {
-			System.out.println(e.toString());
+		for (Personaje personaje:listaPersonajes) {
+			System.out.println(personaje.toString());
 		}
+	}
+
+	
+	//metodos para subir el nivel de los personajes
+	public void subirMago(Mago mago) {
+		mago.setNivel(+1);
+		mago.setVida(+10);
+		mago.setMana(+20);
+		mago.setFuerza(+2);
+		mago.setDefensa(+1);
+	}
+	public void subirGuerrero(Guerrero guerrero) {
+		guerrero.setNivel(+1);
+		guerrero.setVida(+10);
+		guerrero.setMana(+20);
+		guerrero.setFuerza(+2);
+		guerrero.setDefensa(+1);
+	}
+	public void subirEnano(Enano enano) {
+		enano.setNivel(+1);
+		enano.setVida(+10);
+		enano.setMana(+20);
+		enano.setFuerza(+2);
+		enano.setDefensa(+1);
+	}
+	public void subirArquero(Arquero arquero) {
+		arquero.setNivel(+1);
+		arquero.setVida(+10);
+		arquero.setMana(+20);
+		arquero.setFuerza(+2);
+		arquero.setDefensa(+1);
+	}
+	
+	public Personaje elegirPersonaje(String nombre) {
+		for (Personaje personaje:listaPersonajes) {
+			if(personaje.getNombre().equalsIgnoreCase(nombre)) {
+				return personaje;
+			}
+		}
+		return null;
 	}
 }

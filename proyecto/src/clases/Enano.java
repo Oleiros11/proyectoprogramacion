@@ -1,10 +1,10 @@
 package clases;
 
 public class Enano extends Personaje{
-	int vida;
-	int mana;
-	int fuerza;
-	int defensa;
+	int vida=70;
+	int mana=40;
+	int fuerza=8;
+	int defensa=12;
 
 	public Enano(String nombre, String clase) {
 		super(nombre,clase);
