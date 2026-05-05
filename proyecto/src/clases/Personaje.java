@@ -5,11 +5,21 @@ public class Personaje {
 	String clase;
 	int nivel=1;
 	int expNecesaria=100;
+	int dinero=400;
 	
 	public Personaje(String nombre, String clase) {
 		this.nombre=nombre;
 		this.clase=clase;
 		this.nivel=nivel;
+		this.expNecesaria=expNecesaria;
+		this.dinero=dinero;
+	}
+	public Personaje() {
+		this.nombre=nombre;
+		this.clase=clase;
+		this.nivel=nivel;
+		this.expNecesaria=expNecesaria;
+		this.dinero=dinero;
 	}
 	
 
@@ -55,6 +65,12 @@ public class Personaje {
 	}
 
 
+	public int getDinero() {
+		return dinero;
+	}
+	public void setDinero(int dinero) {
+		this.dinero = dinero;
+	}
 	@Override
 	public String toString() {
 		return "Personaje [nombre=" + nombre + ", clase=" + clase + ", nivel=" + nivel + "]";

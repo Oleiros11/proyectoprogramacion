@@ -14,6 +14,13 @@ public class Guerrero extends Personaje{
 		this.fuerza=fuerza;
 		this.defensa=defensa;
 	}
+	public Guerrero() {
+		super();
+		this.vida=vida;
+		this.mana=mana;
+		this.fuerza=fuerza;
+		this.defensa=defensa;
+	}
 	public int getVida() {
 		return vida;
 	}

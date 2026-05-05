@@ -14,6 +14,14 @@ public class Enano extends Personaje{
 		this.defensa=defensa;
 
 	}
+	public Enano() {
+		super();
+		this.vida=vida;
+		this.mana=mana;
+		this.fuerza=fuerza;
+		this.defensa=defensa;
+
+	}
 	public int getVida() {
 		return vida;
 	}

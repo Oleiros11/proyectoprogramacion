@@ -13,6 +13,13 @@ public class Mago extends Personaje{
 		this.fuerza=fuerza;
 		this.defensa=defensa;
 	}
+	public Mago() {
+		super();
+		this.vida=vida;
+		this.mana=mana;
+		this.fuerza=fuerza;
+		this.defensa=defensa;
+	}
 
 	public int getVida() {
 		return vida;

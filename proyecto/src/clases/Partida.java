@@ -5,6 +5,12 @@ import java.util.Iterator;
 
 public class Partida {
 	ArrayList<Personaje> listaPersonajes=new ArrayList<>();
+	ArrayList<Mago> listaMagos=new ArrayList<>();
+	ArrayList<Guerrero> listaGuerreros=new ArrayList<>();
+	ArrayList<Enano> listaEnanos=new ArrayList<>();
+	ArrayList<Arquero> listaArqueros=new ArrayList<>();
+	
+	
 	
 	public Partida() {
 		super();
@@ -15,15 +21,19 @@ public class Partida {
 			if(clase.equals("Guerrero")) {
 				Guerrero guerrero=new Guerrero(nombre,clase);
 				listaPersonajes.add(guerrero);
+				listaGuerreros.add(guerrero);
 			} else if(clase.equalsIgnoreCase("Mago")) {
 				Mago mago=new Mago(nombre,clase);
 				listaPersonajes.add(mago);
+				listaMagos.add(mago);
 			} else if(clase.equalsIgnoreCase("Arquero")) {
 				Arquero arquero=new Arquero(nombre,clase);
 				listaPersonajes.add(arquero);
+				listaArqueros.add(arquero);
 			} else if(clase.equalsIgnoreCase("Enano")) {
 				Enano enano=new Enano(nombre,clase);
 				listaPersonajes.add(enano);
+				listaEnanos.add(enano);
 			} else {
 				System.out.println("No existe esa clase");
 			}
@@ -39,15 +49,46 @@ public class Partida {
 			}
 		}
 		
+	//metodos para buscar y ver informacion
 	
 	public void listarPersonajes() {
 		for (Personaje personaje:listaPersonajes) {
 			System.out.println(personaje.toString());
 		}
 	}
-
+	public void listarPorClase(String clase) {
+		for (Personaje personaje:listaPersonajes) {
+			if(personaje.getClase().equalsIgnoreCase(clase)) {
+				System.out.println(personaje.toString());
+			}
+			
+		}
 	
-	//metodos para subir el nivel de los personajes
+	}
+	public void buscarPersonaje(String nombre) {
+		for(Personaje personaje:listaPersonajes) {
+			if(personaje.getNombre().equalsIgnoreCase(nombre)) {
+				System.out.println(personaje);
+			}
+		}
+	}
+	public void verNivel(Personaje enUso) {
+		System.out.println("Eres nivel "+enUso.nivel);
+		System.out.println("Te faltan "+enUso.expNecesaria+" puantos para subir al siguiente nivel");
+	}	
+	//metodo para saber cuanto dinero tienes
+	
+	public void verOro(String nombre) {
+		for (Personaje personaje:listaPersonajes) {
+			if(personaje.getNombre().equalsIgnoreCase(nombre)) {
+				System.out.println("Tu oro: "+personaje.getDinero());
+			}
+		}
+	}
+	
+	
+	//metodos para subir el nivel a los personajes
+	// dependiendo de la clase
 	public void subirMago(Mago mago) {
 		mago.setNivel(+1);
 		mago.setVida(+10);
@@ -77,12 +118,72 @@ public class Partida {
 		arquero.setDefensa(+1);
 	}
 	
-	public Personaje elegirPersonaje(String nombre) {
-		for (Personaje personaje:listaPersonajes) {
-			if(personaje.getNombre().equalsIgnoreCase(nombre)) {
-				return personaje;
+	//metodos para elegir personaje por clase y nombre
+	
+	public Mago elegirMago(String nombre) {
+		Mago mago=new Mago();
+		for(Mago e:listaMagos) {
+			if(e.getNombre().equalsIgnoreCase(nombre)) {
+				mago.setNombre(nombre);
+				mago.setClase("Mago");
+				mago.setVida(e.getVida());
+				mago.setFuerza(e.getFuerza());
+				mago.setDefensa(e.getDefensa());
+				mago.setMana(e.getMana());
+				return mago;
 			}
+			
 		}
 		return null;
 	}
+	public Guerrero elegirGuerrero (String nombre) {
+		Guerrero guerrero=new Guerrero();
+		for(Guerrero e:listaGuerreros) {
+			if(e.getNombre().equalsIgnoreCase(nombre)) {
+				guerrero.setNombre(nombre);
+				guerrero.setClase("Mago");
+				guerrero.setVida(e.getVida());
+				guerrero.setFuerza(e.getFuerza());
+				guerrero.setDefensa(e.getDefensa());
+				guerrero.setMana(e.getMana());
+				return guerrero;
+			}
+			
+		}
+		return null;
+	}
+	public Enano elegirEnano (String nombre) {
+		Enano enano=new Enano();
+		for(Enano e:listaEnanos) {
+			if(e.getNombre().equalsIgnoreCase(nombre)) {
+				enano.setNombre(nombre);
+				enano.setClase("Mago");
+				enano.setVida(e.getVida());
+				enano.setFuerza(e.getFuerza());
+				enano.setDefensa(e.getDefensa());
+				enano.setMana(e.getMana());
+				return enano;
+			}
+			
+		}
+		return null;
+	}
+	
+	public Arquero elegirArquero (String nombre) {
+		Arquero arquero=new Arquero();
+		for(Arquero e:listaArqueros) {
+			if(e.getNombre().equalsIgnoreCase(nombre)) {
+				arquero.setNombre(nombre);
+				arquero.setClase("Mago");
+				arquero.setVida(e.getVida());
+				arquero.setFuerza(e.getFuerza());
+				arquero.setDefensa(e.getDefensa());
+				arquero.setMana(e.getMana());
+				return arquero;
+			}
+			
+		}
+		return null;
+	}
+
 }

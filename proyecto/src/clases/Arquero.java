@@ -13,6 +13,14 @@ public class Arquero extends Personaje {
 		this.fuerza=fuerza;
 		this.defensa=defensa;
 	}
+
+	public Arquero() {
+		super();
+		this.vida=vida;
+		this.mana=mana;
+		this.fuerza=fuerza;
+		this.defensa=defensa;
+	}
 	public int getVida() {
 		return vida;
 	}
