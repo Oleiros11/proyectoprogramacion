@@ -3,10 +3,14 @@ package principal;
 import java.util.Scanner;
 
 import clases.Arco;
+import clases.Arquero;
 import clases.BastonMago;
+import clases.Enano;
 import clases.EspadaGuerrero;
 import clases.Guerrero;
+import clases.Habilidad;
 import clases.HachaEnano;
+import clases.Hechizo;
 import clases.Mago;
 import clases.Partida;
 
@@ -20,9 +24,12 @@ public class Principal {
 		Arco arco1=new Arco(0,"Arquero",10,"Arco normal");
 		EspadaGuerrero espada1=new EspadaGuerrero(0,"Guerrero",10,"Espada normal");
 		HachaEnano hacha1=new HachaEnano(0,"Enano",7,"Hacha normal");
+		Hechizo bola=new Hechizo("Bola de fuego",1000, 20,"Mago");
+		Habilidad flecha=new Habilidad("Disparo Precios", 75,30,"Arquero");
+		Habilidad furia=new Habilidad("FURIA",100,40, "Guerrero");
+		Habilidad lanzamiento=new Habilidad("Lanzamiento de hacha",80,20,"Enano");
 		String nombre;
 		String clase;
-		int puntuacion=87;
 		partida1.crearPersonaje("Gandalf", "Mago");
 		partida1.crearPersonaje("Aragorn", "Guerrero");
 		partida1.crearPersonaje("Gimli", "Enano");
@@ -50,26 +57,35 @@ public class Principal {
 			Mago enUso=new Mago();
 			enUso=partida1.elegirMago(nombre,baston1);
 			System.out.println("¡Personaje elegido!");
+			partida1.JuegoMago(enUso,input,bola);
 			
 		} else if (clase.equalsIgnoreCase("Guerrero")) {
 			System.out.println("¿Que personaje quieres usar?");
 			partida1.listarPorClase(clase);
 			nombre=input.nextLine();
 			Guerrero enUso=new Guerrero();
-			partida1.elegirGuerrero(nombre,espada1);
+			enUso=partida1.elegirGuerrero(nombre,espada1);
 			System.out.println("¡Personaje elegido!");
+			partida1.JuegoGuerrero(enUso,numero,input);
+			
 		} else if(clase.equalsIgnoreCase("Enano")) {
 			System.out.println("¿Que personaje quieres usar?");
 			partida1.listarPorClase(clase);
 			nombre=input.nextLine();
-			partida1.elegirEnano(nombre,hacha1);
+			Enano enUso=new Enano();
+			enUso=partida1.elegirEnano(nombre,hacha1);
 			System.out.println("¡Personaje elegido!");
+			partida1.JuegoEnano(enUso,numero,input);
+			
 		} else if(clase.equalsIgnoreCase("Arquero")) {
 			System.out.println("¿Que personaje quieres usar?");
 			partida1.listarPorClase(clase);
 			nombre=input.nextLine();
-			partida1.elegirArquero(nombre,arco1);
+			Arquero enUso=new Arquero();
+			enUso=partida1.elegirArquero(nombre,arco1);
 			System.out.println("¡Personaje elegido!");
+			partida1.JuegoArquero(enUso,numero,input);
+			
 		} else {
 			System.out.println("No existe esa clase");
 		} 

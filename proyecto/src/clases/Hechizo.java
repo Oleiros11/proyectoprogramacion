@@ -35,6 +35,11 @@ public class Hechizo {
 	public void setClase(String clase) {
 		this.clase = clase;
 	}
+	@Override
+	public String toString() {
+		return "Hechizo [nombre=" + nombre + ", damage=" + damage + ", costaMana=" + costaMana + ", clase=" + clase
+				+ "]";
+	}
 	
 	
 }

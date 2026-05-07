@@ -2,6 +2,7 @@ package clases;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class Partida {
 	ArrayList<Personaje> listaPersonajes=new ArrayList<>();
@@ -72,19 +73,36 @@ public class Partida {
 			}
 		}
 	}
-	public void verNivel(Personaje enUso) {
-		System.out.println("Eres nivel "+enUso.nivel);
-		System.out.println("Te faltan "+enUso.expNecesaria+" puantos para subir al siguiente nivel");
-	}	
-	//metodo para saber cuanto dinero tienes
-	
-	public void verOro(String nombre) {
-		for (Personaje personaje:listaPersonajes) {
-			if(personaje.getNombre().equalsIgnoreCase(nombre)) {
-				System.out.println("Tu oro: "+personaje.getDinero());
-			}
-		}
+	public void estadisticasMago(Mago mago) {
+		System.out.println("Tu vida maxima es de "+mago.getVidaMax());
+		System.out.println("Tu mana es de "+mago.getMana());
+		System.out.println("Tu fuerza es de "+mago.getFuerza());
+		System.out.println("Tu defensa es de "+mago.getDefensa());
+		System.out.println("Eres nivel "+mago.getNivel()+" ahora");
 	}
+	public void estadisticasGuerrero(Guerrero guerrero) {
+		System.out.println("Tu vida maxima es de "+guerrero.getVidaMax());
+		System.out.println("Tu mana es de "+guerrero.getMana());
+		System.out.println("Tu fuerza es de "+guerrero.getFuerza());
+		System.out.println("Tu defensa es de "+guerrero.getDefensa());
+		System.out.println("Eres nivel "+guerrero.getNivel()+" ahora");
+	}
+	public void estadisticasArquero(Arquero arquero) {
+		System.out.println("Tu vida maxima es de "+arquero.getVidaMax());
+		System.out.println("Tu mana es de "+arquero.getMana());
+		System.out.println("Tu fuerza es de "+arquero.getFuerza());
+		System.out.println("Tu defensa es de "+arquero.getDefensa());
+		System.out.println("Eres nivel "+arquero.getNivel()+" ahora");
+	}
+	public void estadisticasEnano(Enano enano) {
+		System.out.println("Tu vida maxima es de "+enano.getVidaMax());
+		System.out.println("Tu mana es de "+enano.getMana());
+		System.out.println("Tu fuerza es de "+enano.getFuerza());
+		System.out.println("Tu defensa es de "+enano.getDefensa());
+		System.out.println("Eres nivel "+enano.getNivel()+" ahora");
+	}
+	
+	
 	
 	
 	//metodos para subir el nivel a los personajes
@@ -107,8 +125,9 @@ public class Partida {
 		if(mago.getNivel()==3) {
 			mago.setHechizo(hechizo);
 			System.out.println("Has aprendido el hechizo Bola de Fuego");
-			System.out.println("Cuesta X de mana y hace X de daño al objetivo");
+			System.out.println("Cuesta "+hechizo.getCostaMana()+" de mana y hace "+hechizo.getDamage()+" de daño al objetivo");
 		}
+		estadisticasMago(mago);
 	}
 	public void subirGuerrero(Guerrero guerrero, Habilidad habilidad) {
 		guerrero.setNivel(+1);
@@ -128,8 +147,10 @@ public class Partida {
 		if(guerrero.getNivel()==3) {
 			guerrero.setHabilidad(habilidad);
 			System.out.println("Has aprendido la habilidad FURIA");
-			System.out.println("Descarga una sucesion de golpes la cual cuesta X de mana y hace X de daño total");
+			System.out.println("Descarga una sucesion de golpes la cual cuesta "+habilidad.getCosteMana()+" de mana y hace "+
+			habilidad.getDamage()+" daño total");
 		}
+		estadisticasGuerrero(guerrero);
 	}
 	public void subirEnano(Enano enano, Habilidad habilidad) {
 		enano.setNivel(+1);
@@ -149,9 +170,11 @@ public class Partida {
 		if(enano.getNivel()==3) {
 			enano.setHabilidad(habilidad);
 			System.out.println("Has aprendido al habilidad Lanzamiento de Hacha");
-			System.out.println("Lanzas tu hacha al enemigo para infringirle severos daños. Cuesta X de mana y hace X de daño");
+			System.out.println("Lanzas tu hacha al enemigo para infringirle severos daños. Cuesta "+habilidad.getCosteMana()+" de mana"
+					+ " y hace "+habilidad.getDamage()+" de daño");
 			System.out.println("Acuerdate de recogerla despues");
 		}
+		estadisticasEnano(enano);
 	}
 	public void subirArquero(Arquero arquero, Habilidad habilidad) {
 		arquero.setNivel(+1);
@@ -171,8 +194,11 @@ public class Partida {
 		if(arquero.getNivel()==3) {
 			arquero.setHabilidad(habilidad);
 			System.out.println("Has aprendido la habilidad Disparo Precios");
-			System.out.println("Agudizas tus sentidos para poder dar en un punto vital, haciendo gran daño. Cuesta X de mana y hace X de daño");
+			System.out.println("Agudizas tus sentidos para poder dar en un punto vital, "
+					+ "haciendo gran daño. Cuesta "+habilidad.getCosteMana()+" de mana y hace "+habilidad.getDamage()+" de daño");
+			
 		}
+		estadisticasArquero(arquero);
 	}
 	
 	//metodos para elegir personaje por clase y nombre
@@ -250,5 +276,163 @@ public class Partida {
 		}
 		return null;
 	}
+	
+	//metodo para el sistema de combate
+	public void JuegoMago(Mago enUso,  Scanner input, Hechizo bola) {
+		int rondas=0;
+		int idEnemigo=0;
+		int opcion=0;
+		int damage=0;
+		boolean estatusPartida=true;
+		if(estatusPartida=true) {
+		if(enUso.getNivel()==1) {
+			idEnemigo=(int)(Math.random() * 10) + 1;
+			if(idEnemigo>=1 && idEnemigo>=7) {
+				Goblin goblin=new Goblin("Goblin","Goblin");
+				System.out.println("¡Ha aparecido un Goblin enemigo!");
+				do {
+					System.out.println("¿Que quieres hacer?");
+					System.out.println("1.- Atacar");
+					System.out.println("2.- Habilidades");
+					System.out.println("3.- Estatus");
+					opcion=input.nextInt();
+					if(opcion==1) {
+						damage=((int)(Math.random() * enUso.getArma().getAtaque())+1)+enUso.getFuerza()-goblin.getDefensa();
+						if(damage>0) {
+							goblin.setVida(goblin.getVida()-damage);
+							System.out.println("Atacas al Goblin");
+							System.out.println("Haces "+damage+" de daño");
+						}
+						if(goblin.getVida()<=0) {
+							System.out.println("El goblin enemigo ha muerto");
+							System.out.println("Has conseguido "+goblin.getExpDada()+" puntos de experiencia y"
+									+ goblin.oroDado+" de oro");
+							enUso.setDinero(enUso.getDinero()+goblin.getOroDado());
+							enUso.setExpNecesaria(enUso.getExpNecesaria()-goblin.getExpDada());
+							if(enUso.getExpNecesaria()<=0) {
+								System.out.println("¡¡Enhorabuena!! Has subido de nivel");
+								subirMago(enUso,bola);
+							}
+						}
+						else {
+							System.out.println("El Goblin ataca de vuelta");
+							damage=((int)(Math.random() * goblin.getAtaque())+1)+goblin.getFuerza()-enUso.getDefensa();
+							if(damage>0) {
+								enUso.setVida(enUso.getVida()-damage);
+								System.out.println("El Goblin hace "+damage+" de daño");
+								if(enUso.getVida()>0) {
+									System.out.println("Te queda "+enUso.getVida()+" de vida");
+								} else {
+									System.out.println("¡Has muerto! Fin de la partida");
+									estatusPartida=false;
+								}
+							}
+						}
+					} else if(opcion==2) {
+						if(enUso.getHechizo()==null) {
+							System.out.println("No tienes hechizos");
+						} else {
+							input.nextLine();
+							System.out.println("¿Quieres usar el siguiente hechizo?(S/N)");
+							System.out.println(enUso.getHechizo());
+							String usar=input.nextLine();
+							if(usar.equalsIgnoreCase("S")) {
+								damage=bola.getDamage()-goblin.getVida();
+								System.out.println("Ha hecho "+damage+"puntos de daño");
+							}
+						}
+						if(goblin.getVida()<=0) {
+							System.out.println("El goblin enemigo ha muerto");
+							System.out.println("Has conseguido "+goblin.getExpDada()+" puntos de experiencia y"
+									+ goblin.oroDado+" de oro");
+							enUso.setDinero(enUso.getDinero()+goblin.getOroDado());
+							enUso.setExpNecesaria(enUso.getExpNecesaria()-goblin.getExpDada());
+							if(enUso.getExpNecesaria()<=0) {
+								System.out.println("¡¡Enhorabuena!! Has subido de nivel");
+								subirMago(enUso,bola);
+							}
+						}
+						else {
+							System.out.println("El Goblin ataca de vuelta");
+							damage=((int)(Math.random() * goblin.getAtaque())+1)+goblin.getFuerza()-enUso.getDefensa();
+							if(damage>0) {
+								enUso.setVida(enUso.getVida()-damage);
+								System.out.println("El Goblin hace "+damage+" de daño");
+								if(enUso.getVida()>0) {
+									System.out.println("Te queda "+enUso.getVida()+" de vida");
+								} else {
+									System.out.println("¡Has muerto! Fin de la partida");
+									estatusPartida=false;
+								}
+							}
+						} 
+						
+					}
+					else if(opcion==3) {
+						System.out.println("Te queda "+enUso.getVida()+"de vida y "+enUso.getMana()+" de mana");
+						
+					}
+				} while(goblin.getVida()>0 && enUso.getVida()>0);
+				
+				if(idEnemigo>=7&&idEnemigo<=10) {
+					Murcielago murcielago=new Murcielago("Murcielago","Murcielago");
+					System.out.println("¡Ha aparecido un Murcielago enemigo!");
+					do {
+						System.out.println("¿Que quieres hacer?");
+						System.out.println("1.- Atacar");
+						System.out.println("2.- Hechizos");
+						System.out.println("3.- Estatus");
+						opcion=input.nextInt();
+						if(opcion==1) {
+							damage=((int)(Math.random() * enUso.getArma().getAtaque())+1)+enUso.getFuerza()-murcielago.getDefensa();
+							if(damage>0) {
+								murcielago.setVida(murcielago.getVida()-damage);
+								System.out.println("Atacas al Murcielago");
+								System.out.println("Haces "+damage+" de daño");
+							}
+							if(murcielago.getVida()<=0) {
+								System.out.println("El murcielago enemigo ha muerto");
+								System.out.println("Has conseguido "+murcielago.getExpDada()+" puntos de experiencia y"
+										+ goblin.oroDado+" de oro");
+								enUso.setDinero(enUso.getDinero()+murcielago.getOroDado());
+								enUso.setExpNecesaria(enUso.getExpNecesaria()-murcielago.getExpDada());
+								if(enUso.getExpNecesaria()<=0) {
+									System.out.println("¡¡Enhorabuena!! Has subido de nivel");
+									subirMago(enUso,bola);
+								}
+							}
+							else {
+								System.out.println("El Murcielago ataca de vuelta");
+								damage=((int)(Math.random() * murcielago.getAtaque())+1)+murcielago.getFuerza()-enUso.getDefensa();
+								if(damage>0) {
+									enUso.setVida(enUso.getVida()-damage);
+									System.out.println("El Murcielago hace "+damage+" de daño");
+									if(enUso.getVida()>0) {
+										System.out.println("Te queda "+enUso.getVida()+" de vida");
+									} else {
+										System.out.println("¡Has muerto! Fin de la partida");
+										estatusPartida=false;
+									}
+								}
+							}
+						}
+					} while(murcielago.getVida()>0 && enUso.getVida()>0);
+					
+				}
+			}
+			
+			} else if(enUso.getNivel()==2) {
+				
+			} else if (enUso.getNivel()==3) {
+				
+			} else if (enUso.getNivel()==4) {
+			
+			} else if(enUso.getNivel()==5) {
+				
+			}
+		}
+		}
+		
+	
 
 }
