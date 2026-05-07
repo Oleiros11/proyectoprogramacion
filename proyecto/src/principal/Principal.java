@@ -2,7 +2,11 @@ package principal;
 
 import java.util.Scanner;
 
+import clases.Arco;
+import clases.BastonMago;
+import clases.EspadaGuerrero;
 import clases.Guerrero;
+import clases.HachaEnano;
 import clases.Mago;
 import clases.Partida;
 
@@ -11,6 +15,10 @@ public class Principal {
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
 		Partida partida1=new Partida();
+		BastonMago baston1=new BastonMago(0,"Mago",5,"Baston normal");
+		Arco arco1=new Arco(0,"Arquero",10,"Arco normal");
+		EspadaGuerrero espada1=new EspadaGuerrero(0,"Guerrero",10,"Espada normal");
+		HachaEnano hacha1=new HachaEnano(0,"Enano",7,"Hacha normal");
 		String nombre;
 		String clase;
 		partida1.crearPersonaje("Gandalf", "Mago");
@@ -77,11 +85,7 @@ public class Principal {
 		
 		
 			case 3:
-		System.out.println("¿Que quieres hacer?");
-		System.out.println("1.- Ver todos los personajes");
-		System.out.println("2.- Ver personaje por clase");
-		System.out.println("3.- Buscar personaje");
-		numero=input.nextInt();
+		partida1.listarPersonajes();
 		
 		break;
 		

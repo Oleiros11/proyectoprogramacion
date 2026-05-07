@@ -95,6 +95,15 @@ public class Partida {
 		mago.setMana(+20);
 		mago.setFuerza(+2);
 		mago.setDefensa(+1);
+		if(mago.getNivel()==2) {
+			mago.setExpNecesaria(300);
+		} else if (mago.getNivel()==3) {
+			mago.setExpNecesaria(350);
+		} else if(mago.getNivel()==4) {
+			mago.setExpNecesaria(400);
+		} else if(mago.getNivel()==5) {
+			mago.setExpNecesaria(450);
+		}
 	}
 	public void subirGuerrero(Guerrero guerrero) {
 		guerrero.setNivel(+1);
@@ -102,6 +111,15 @@ public class Partida {
 		guerrero.setMana(+20);
 		guerrero.setFuerza(+2);
 		guerrero.setDefensa(+1);
+		if(guerrero.getNivel()==2) {
+			guerrero.setExpNecesaria(300);
+		} else if (guerrero.getNivel()==3) {
+			guerrero.setExpNecesaria(350);
+		} else if(guerrero.getNivel()==4) {
+			guerrero.setExpNecesaria(400);
+		} else if(guerrero.getNivel()==5) {
+			guerrero.setExpNecesaria(450);
+		}
 	}
 	public void subirEnano(Enano enano) {
 		enano.setNivel(+1);
@@ -109,6 +127,15 @@ public class Partida {
 		enano.setMana(+20);
 		enano.setFuerza(+2);
 		enano.setDefensa(+1);
+		if(enano.getNivel()==2) {
+			enano.setExpNecesaria(300);
+		} else if (enano.getNivel()==3) {
+			enano.setExpNecesaria(350);
+		} else if(enano.getNivel()==4) {
+			enano.setExpNecesaria(400);
+		} else if(enano.getNivel()==5) {
+			enano.setExpNecesaria(450);
+		}
 	}
 	public void subirArquero(Arquero arquero) {
 		arquero.setNivel(+1);
@@ -116,6 +143,15 @@ public class Partida {
 		arquero.setMana(+20);
 		arquero.setFuerza(+2);
 		arquero.setDefensa(+1);
+		if(arquero.getNivel()==2) {
+			arquero.setExpNecesaria(300);
+		} else if (arquero.getNivel()==3) {
+			arquero.setExpNecesaria(350);
+		} else if(arquero.getNivel()==4) {
+			arquero.setExpNecesaria(400);
+		} else if(arquero.getNivel()==5) {
+			arquero.setExpNecesaria(450);
+		}
 	}
 	
 	//metodos para elegir personaje por clase y nombre

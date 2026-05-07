@@ -1,13 +1,13 @@
 package clases;
 
-public class Goblin extends Enemigo{
-	int vida=20;
-	int fuerza=2;
+public class Murcielago extends Enemigo{
+	int vida=40;
+	int fuerza=20;
 	int defensa=4;
 	int ataque=6;
-	int oroDado=15;
-	int expDada=50;
-	public Goblin(String nombre, String raza) {
+	int oroDado=40;
+	int expDada=150;
+	public Murcielago(String nombre, String raza) {
 		super(nombre, raza);
 		this.vida = vida;
 		this.fuerza = fuerza;
@@ -54,11 +54,9 @@ public class Goblin extends Enemigo{
 	}
 	@Override
 	public String toString() {
-		return "Goblin [vida=" + vida + ", fuerza=" + fuerza + ", defensa=" + defensa + ", ataque=" + ataque
+		return "Murcielago [vida=" + vida + ", fuerza=" + fuerza + ", defensa=" + defensa + ", ataque=" + ataque
 				+ ", oroDado=" + oroDado + ", expDada=" + expDada + "]";
 	}
 	
 	
-	
-
 }

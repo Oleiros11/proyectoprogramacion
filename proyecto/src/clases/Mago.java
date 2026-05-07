@@ -5,6 +5,7 @@ public class Mago extends Personaje{
 	int mana=100;
 	int fuerza=5;
 	int defensa=5;
+	BastonMago arma;
 
 	public Mago(String nombre, String clase) {
 		super(nombre, clase);
@@ -12,6 +13,7 @@ public class Mago extends Personaje{
 		this.mana=mana;
 		this.fuerza=fuerza;
 		this.defensa=defensa;
+		this.arma=arma;
 	}
 	public Mago() {
 		super();
@@ -19,6 +21,7 @@ public class Mago extends Personaje{
 		this.mana=mana;
 		this.fuerza=fuerza;
 		this.defensa=defensa;
+		this.arma=arma;
 	}
 
 	public int getVida() {
@@ -52,7 +55,14 @@ public class Mago extends Personaje{
 	public void setDefensa(int defensa) {
 		this.defensa = defensa;
 	}
+	
 
+	public BastonMago getArma() {
+		return arma;
+	}
+	public void setArma(BastonMago arma) {
+		this.arma = arma;
+	}
 	@Override
 	public String toString() {
 		return " nombre="+ nombre + "[vida=" + vida + ", mana=" + mana + ", fuerza=" + fuerza + ", defensa=" + defensa + ", clase=" + clase + ", nivel=" + nivel + "]";
