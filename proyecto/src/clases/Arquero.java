@@ -1,17 +1,23 @@
 package clases;
 
 public class Arquero extends Personaje {
+	int vidaMax=40;
 	int vida=40;
 	int mana=60;
 	int fuerza=10;
 	int defensa=7;
+	Arco arma;
+	Habilidad habilidad;
 
 	public Arquero(String nombre, String clase) {
 		super(nombre, clase);
+		this.vidaMax=vidaMax;
 		this.vida=vida;
 		this.mana=mana;
 		this.fuerza=fuerza;
 		this.defensa=defensa;
+		this.arma=arma;
+		this.habilidad=habilidad;
 	}
 
 	public Arquero() {
@@ -20,6 +26,8 @@ public class Arquero extends Personaje {
 		this.mana=mana;
 		this.fuerza=fuerza;
 		this.defensa=defensa;
+		this.arma=arma;
+		this.habilidad=habilidad;
 	}
 	public int getVida() {
 		return vida;
@@ -51,6 +59,33 @@ public class Arquero extends Personaje {
 
 	public void setDefensa(int defensa) {
 		this.defensa = defensa;
+	}
+	
+
+	public Arco getArma() {
+		return arma;
+	}
+
+	public void setArma(Arco arma) {
+		this.arma = arma;
+	}
+	
+
+	public Habilidad getHabilidad() {
+		return habilidad;
+	}
+
+	public void setHabilidad(Habilidad habilidad) {
+		this.habilidad = habilidad;
+	}
+	
+
+	public int getVidaMax() {
+		return vidaMax;
+	}
+
+	public void setVidaMax(int vidaMax) {
+		this.vidaMax = vidaMax;
 	}
 
 	@Override

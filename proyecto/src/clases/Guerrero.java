@@ -1,18 +1,23 @@
 package clases;
 
 public class Guerrero extends Personaje{
+	int vidaMax=50;
 	int vida=50;
 	int mana=50;
 	int fuerza=15;
 	int defensa=10;
+	EspadaGuerrero arma;
+	Habilidad habilidad;
 
 	public Guerrero(String nombre, String clase) {
 		super(nombre, clase);
-		
+		this.vidaMax=vidaMax;
 		this.vida=vida;
 		this.mana=mana;
 		this.fuerza=fuerza;
 		this.defensa=defensa;
+		this.arma=arma;
+		this.habilidad=habilidad;
 	}
 	public Guerrero() {
 		super();
@@ -20,6 +25,8 @@ public class Guerrero extends Personaje{
 		this.mana=mana;
 		this.fuerza=fuerza;
 		this.defensa=defensa;
+		this.arma=arma;
+		this.habilidad=habilidad;
 	}
 	public int getVida() {
 		return vida;
@@ -52,7 +59,28 @@ public class Guerrero extends Personaje{
 	public void setDefensa(int defensa) {
 		this.defensa = defensa;
 	}
+	
 
+	public EspadaGuerrero getArma() {
+		return arma;
+	}
+	public void setArma(EspadaGuerrero arma) {
+		this.arma = arma;
+	}
+	
+	public Habilidad getHabilidad() {
+		return habilidad;
+	}
+	public void setHabilidad(Habilidad habilidad) {
+		this.habilidad = habilidad;
+	}
+	
+	public int getVidaMax() {
+		return vidaMax;
+	}
+	public void setVidaMax(int vidaMax) {
+		this.vidaMax = vidaMax;
+	}
 	@Override
 	public String toString() {
 		return " nombre="+ nombre + "[vida=" + vida + ", mana=" + mana + ", fuerza=" + fuerza + ", defensa=" + defensa + ", clase=" + clase + ", nivel=" + nivel + "]";

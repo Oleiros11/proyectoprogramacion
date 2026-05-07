@@ -89,7 +89,7 @@ public class Partida {
 	
 	//metodos para subir el nivel a los personajes
 	// dependiendo de la clase
-	public void subirMago(Mago mago) {
+	public void subirMago(Mago mago, Hechizo hechizo) {
 		mago.setNivel(+1);
 		mago.setVida(+10);
 		mago.setMana(+20);
@@ -104,8 +104,13 @@ public class Partida {
 		} else if(mago.getNivel()==5) {
 			mago.setExpNecesaria(450);
 		}
+		if(mago.getNivel()==3) {
+			mago.setHechizo(hechizo);
+			System.out.println("Has aprendido el hechizo Bola de Fuego");
+			System.out.println("Cuesta X de mana y hace X de daño al objetivo");
+		}
 	}
-	public void subirGuerrero(Guerrero guerrero) {
+	public void subirGuerrero(Guerrero guerrero, Habilidad habilidad) {
 		guerrero.setNivel(+1);
 		guerrero.setVida(+10);
 		guerrero.setMana(+20);
@@ -120,8 +125,13 @@ public class Partida {
 		} else if(guerrero.getNivel()==5) {
 			guerrero.setExpNecesaria(450);
 		}
+		if(guerrero.getNivel()==3) {
+			guerrero.setHabilidad(habilidad);
+			System.out.println("Has aprendido la habilidad FURIA");
+			System.out.println("Descarga una sucesion de golpes la cual cuesta X de mana y hace X de daño total");
+		}
 	}
-	public void subirEnano(Enano enano) {
+	public void subirEnano(Enano enano, Habilidad habilidad) {
 		enano.setNivel(+1);
 		enano.setVida(+10);
 		enano.setMana(+20);
@@ -136,8 +146,14 @@ public class Partida {
 		} else if(enano.getNivel()==5) {
 			enano.setExpNecesaria(450);
 		}
+		if(enano.getNivel()==3) {
+			enano.setHabilidad(habilidad);
+			System.out.println("Has aprendido al habilidad Lanzamiento de Hacha");
+			System.out.println("Lanzas tu hacha al enemigo para infringirle severos daños. Cuesta X de mana y hace X de daño");
+			System.out.println("Acuerdate de recogerla despues");
+		}
 	}
-	public void subirArquero(Arquero arquero) {
+	public void subirArquero(Arquero arquero, Habilidad habilidad) {
 		arquero.setNivel(+1);
 		arquero.setVida(+10);
 		arquero.setMana(+20);
@@ -152,52 +168,63 @@ public class Partida {
 		} else if(arquero.getNivel()==5) {
 			arquero.setExpNecesaria(450);
 		}
+		if(arquero.getNivel()==3) {
+			arquero.setHabilidad(habilidad);
+			System.out.println("Has aprendido la habilidad Disparo Precios");
+			System.out.println("Agudizas tus sentidos para poder dar en un punto vital, haciendo gran daño. Cuesta X de mana y hace X de daño");
+		}
 	}
 	
 	//metodos para elegir personaje por clase y nombre
-	
-	public Mago elegirMago(String nombre) {
+	//este personaje será el que se use en la partida
+	public Mago elegirMago(String nombre, BastonMago baston1) {
 		Mago mago=new Mago();
 		for(Mago e:listaMagos) {
 			if(e.getNombre().equalsIgnoreCase(nombre)) {
 				mago.setNombre(nombre);
 				mago.setClase("Mago");
+				mago.setVidaMax(e.getVidaMax());
 				mago.setVida(e.getVida());
 				mago.setFuerza(e.getFuerza());
 				mago.setDefensa(e.getDefensa());
 				mago.setMana(e.getMana());
+				mago.setArma(baston1);
 				return mago;
 			}
 			
 		}
 		return null;
 	}
-	public Guerrero elegirGuerrero (String nombre) {
+	public Guerrero elegirGuerrero (String nombre,EspadaGuerrero espada1) {
 		Guerrero guerrero=new Guerrero();
 		for(Guerrero e:listaGuerreros) {
 			if(e.getNombre().equalsIgnoreCase(nombre)) {
 				guerrero.setNombre(nombre);
 				guerrero.setClase("Mago");
+				guerrero.setVidaMax(e.getVidaMax());
 				guerrero.setVida(e.getVida());
 				guerrero.setFuerza(e.getFuerza());
 				guerrero.setDefensa(e.getDefensa());
 				guerrero.setMana(e.getMana());
+				guerrero.setArma(espada1);
 				return guerrero;
 			}
 			
 		}
 		return null;
 	}
-	public Enano elegirEnano (String nombre) {
+	public Enano elegirEnano (String nombre, HachaEnano hacha1) {
 		Enano enano=new Enano();
 		for(Enano e:listaEnanos) {
 			if(e.getNombre().equalsIgnoreCase(nombre)) {
 				enano.setNombre(nombre);
 				enano.setClase("Mago");
+				enano.setVidaMax(e.getVidaMax());
 				enano.setVida(e.getVida());
 				enano.setFuerza(e.getFuerza());
 				enano.setDefensa(e.getDefensa());
 				enano.setMana(e.getMana());
+				enano.setArma(hacha1);
 				return enano;
 			}
 			
@@ -205,16 +232,18 @@ public class Partida {
 		return null;
 	}
 	
-	public Arquero elegirArquero (String nombre) {
+	public Arquero elegirArquero (String nombre, Arco arco1) {
 		Arquero arquero=new Arquero();
 		for(Arquero e:listaArqueros) {
 			if(e.getNombre().equalsIgnoreCase(nombre)) {
 				arquero.setNombre(nombre);
 				arquero.setClase("Mago");
+				arquero.setVidaMax(e.getVidaMax());
 				arquero.setVida(e.getVida());
 				arquero.setFuerza(e.getFuerza());
 				arquero.setDefensa(e.getDefensa());
 				arquero.setMana(e.getMana());
+				arquero.setArma(arco1);
 				return arquero;
 			}
 			

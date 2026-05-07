@@ -13,6 +13,7 @@ import clases.Partida;
 public class Principal {
 
 	public static void main(String[] args) {
+		//elementos que tienen que ser creados antes de empezar el juego
 		Scanner input=new Scanner(System.in);
 		Partida partida1=new Partida();
 		BastonMago baston1=new BastonMago(0,"Mago",5,"Baston normal");
@@ -21,11 +22,13 @@ public class Principal {
 		HachaEnano hacha1=new HachaEnano(0,"Enano",7,"Hacha normal");
 		String nombre;
 		String clase;
+		int puntuacion=87;
 		partida1.crearPersonaje("Gandalf", "Mago");
 		partida1.crearPersonaje("Aragorn", "Guerrero");
 		partida1.crearPersonaje("Gimli", "Enano");
 		partida1.crearPersonaje("Legolas", "Arquero");
 		int numero=0;
+		//empieza la aplicación
 		do {
 		System.out.println("¿Que quieres hacer?");
 		System.out.println("1.- Jugar");
@@ -45,7 +48,7 @@ public class Principal {
 			partida1.listarPorClase(clase);
 			nombre=input.nextLine();
 			Mago enUso=new Mago();
-			enUso=partida1.elegirMago(nombre);
+			enUso=partida1.elegirMago(nombre,baston1);
 			System.out.println("¡Personaje elegido!");
 			
 		} else if (clase.equalsIgnoreCase("Guerrero")) {
@@ -53,19 +56,19 @@ public class Principal {
 			partida1.listarPorClase(clase);
 			nombre=input.nextLine();
 			Guerrero enUso=new Guerrero();
-			partida1.elegirGuerrero(nombre);
+			partida1.elegirGuerrero(nombre,espada1);
 			System.out.println("¡Personaje elegido!");
 		} else if(clase.equalsIgnoreCase("Enano")) {
 			System.out.println("¿Que personaje quieres usar?");
 			partida1.listarPorClase(clase);
 			nombre=input.nextLine();
-			partida1.elegirEnano(nombre);
+			partida1.elegirEnano(nombre,hacha1);
 			System.out.println("¡Personaje elegido!");
 		} else if(clase.equalsIgnoreCase("Arquero")) {
 			System.out.println("¿Que personaje quieres usar?");
 			partida1.listarPorClase(clase);
 			nombre=input.nextLine();
-			partida1.elegirArquero(nombre);
+			partida1.elegirArquero(nombre,arco1);
 			System.out.println("¡Personaje elegido!");
 		} else {
 			System.out.println("No existe esa clase");

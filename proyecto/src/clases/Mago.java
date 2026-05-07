@@ -1,19 +1,23 @@
 package clases;
 
 public class Mago extends Personaje{
+	int vidaMax=30;
 	int vida=30;
 	int mana=100;
 	int fuerza=5;
 	int defensa=5;
 	BastonMago arma;
+	Hechizo hechizo;
 
 	public Mago(String nombre, String clase) {
 		super(nombre, clase);
+		this.vidaMax=vidaMax;
 		this.vida=vida;
 		this.mana=mana;
 		this.fuerza=fuerza;
 		this.defensa=defensa;
 		this.arma=arma;
+		this.hechizo=hechizo;
 	}
 	public Mago() {
 		super();
@@ -22,6 +26,7 @@ public class Mago extends Personaje{
 		this.fuerza=fuerza;
 		this.defensa=defensa;
 		this.arma=arma;
+		this.hechizo=hechizo;
 	}
 
 	public int getVida() {
@@ -62,6 +67,20 @@ public class Mago extends Personaje{
 	}
 	public void setArma(BastonMago arma) {
 		this.arma = arma;
+	}
+	
+	public Hechizo getHechizo() {
+		return hechizo;
+	}
+	public void setHechizo(Hechizo hechizo) {
+		this.hechizo = hechizo;
+	}
+	
+	public int getVidaMax() {
+		return vidaMax;
+	}
+	public void setVidaMax(int vidaMax) {
+		this.vidaMax = vidaMax;
 	}
 	@Override
 	public String toString() {
