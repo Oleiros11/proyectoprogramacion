@@ -12,12 +12,14 @@ import clases.HachaEnano;
 import clases.Mago;
 
 public class Tienda {
-	public void entrarTiendaMago(Mago mago,BastonMago baston2, Scanner input) {
+	public static void entrarTiendaMago(Mago mago,BastonMago baston2, Scanner input) {
 		input.nextLine();
 		if(baston2.getCantidad()==1) {
 			System.out.println("¡¡Bienvenido a la tienda!!");
 			System.out.println("Tenemos un bastón que igual te interesa");
-			baston2.toString();
+			System.out.println(baston2.getNombre());
+			System.out.println(baston2.getDescripcion());
+			System.out.println("Cuesta "+baston2.getPrecio()+" de oro");
 			System.out.println("¿Quieres comprarlo?(S/N)");
 			System.out.println("Tu oro: "+mago.getDinero());
 			String respuesta=input.nextLine();
@@ -37,13 +39,16 @@ public class Tienda {
 		} else {
 			System.out.println("No tenemos nada nuevo para ofrecerle, ¡vuelva pronto!");
 		}
+		System.out.println("¡Vida y mana recuperados!");
 	}
-	public void entrarTiendaArquero(Arquero arquero, Arco arco2,Scanner input) {
+	public static void entrarTiendaArquero(Arquero arquero, Arco arco2,Scanner input) {
 		input.nextLine();
 		if(arco2.getCantidad()==1) {
 			System.out.println("¡¡Bienvenido a la tienda!!");
 			System.out.println("Tenemos un arco que igual te interesa");
-			arco2.toString();
+			System.out.println(arco2.getNombre());
+			System.out.println(arco2.getDescripcion());
+			System.out.println("Cuesta "+arco2.getPrecio());
 			System.out.println("¿Quieres comprarlo?(S/N)");
 			System.out.println("Tu oro: "+arquero.getDinero());
 			String respuesta=input.nextLine();
@@ -63,14 +68,17 @@ public class Tienda {
 		} else {
 			System.out.println("No tenemos nada nuevo para ofrecerle, ¡vuelva pronto!");
 		}
+		System.out.println("¡Vida y mana recuperados!");
 	}
-	public void entrarTiendaGuerrero(Guerrero guerrero, EspadaGuerrero espada2,Scanner input) {
+	public static void entrarTiendaGuerrero(Guerrero guerrero, EspadaGuerrero espada2,Scanner input) {
 		input.nextLine();
 		if(espada2.getCantidad()==1) {
 			System.out.println("¡¡Bienvenido a la tienda!!");
-			System.out.println("Tenemos un bastón que igual te interesa");
+			System.out.println("Tenemos una espada que igual te interesa");
 			System.out.println("Pero ten cuidado, ¡pesa mucho!");
-			espada2.toString();
+			System.out.println(espada2.getNombre());
+			System.out.println(espada2.getDescripcion());
+			System.out.println("Cuesta "+espada2.getPrecio()+" de oro");
 			System.out.println("¿Quieres comprarlo?(S/N)");
 			System.out.println("Tu oro: "+guerrero.getDinero());
 			String respuesta=input.nextLine();
@@ -90,13 +98,16 @@ public class Tienda {
 		} else {
 			System.out.println("No tenemos nada nuevo para ofrecerle, ¡vuelva pronto!");
 		}
+		System.out.println("¡Vida y mana recuperados!");
 	}
-	public void entrarTiendaEnano(Enano enano, HachaEnano hacha2,Scanner input) {
+	public static void entrarTiendaEnano(Enano enano, HachaEnano hacha2,Scanner input) {
 		input.nextLine();
 		if(hacha2.getCantidad()==1) {
 			System.out.println("¡¡Bienvenido a la tienda!!");
 			System.out.println("Tenemos un hacha que igual te interesa");
-			hacha2.toString();
+			System.out.println(hacha2.getNombre());
+			System.out.println(hacha2.getDescripcion());
+			System.out.println("Cuesta "+hacha2.getPrecio()+" de oro");
 			System.out.println("¿Quieres comprarlo?(S/N)");
 			System.out.println("Tu oro: "+enano.getDinero());
 			String respuesta=input.nextLine();
@@ -116,5 +127,6 @@ public class Tienda {
 		} else {
 			System.out.println("No tenemos nada nuevo para ofrecerle, ¡vuelva pronto!");
 		}
+		System.out.println("¡Vida y mana recuperados!");
 	}
 }

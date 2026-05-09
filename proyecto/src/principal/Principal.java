@@ -21,9 +21,13 @@ public class Principal {
 		Scanner input=new Scanner(System.in);
 		Partida partida1=new Partida();
 		BastonMago baston1=new BastonMago(0,"Mago",5,"Baston normal");
+		BastonMago baston2=new BastonMago(100,"Mago");
 		Arco arco1=new Arco(0,"Arquero",10,"Arco normal");
+		Arco arco2=new Arco(100,"Arquero");
 		EspadaGuerrero espada1=new EspadaGuerrero(0,"Guerrero",10,"Espada normal");
+		EspadaGuerrero espada2=new EspadaGuerrero(100,"Guerrero");
 		HachaEnano hacha1=new HachaEnano(0,"Enano",7,"Hacha normal");
+		HachaEnano hacha2=new HachaEnano(100,"Enano");
 		Hechizo bola=new Hechizo("Bola de fuego",1000, 20,"Mago");
 		Habilidad flecha=new Habilidad("Disparo Precios", 75,30,"Arquero");
 		Habilidad furia=new Habilidad("FURIA",100,40, "Guerrero");
@@ -57,7 +61,7 @@ public class Principal {
 			Mago enUso=new Mago();
 			enUso=partida1.elegirMago(nombre,baston1);
 			System.out.println("¡Personaje elegido!");
-			partida1.JuegoMago(enUso,input,bola);
+			partida1.JuegoMago(enUso,input,bola,baston2,numero);
 			
 		} else if (clase.equalsIgnoreCase("Guerrero")) {
 			System.out.println("¿Que personaje quieres usar?");
@@ -66,7 +70,7 @@ public class Principal {
 			Guerrero enUso=new Guerrero();
 			enUso=partida1.elegirGuerrero(nombre,espada1);
 			System.out.println("¡Personaje elegido!");
-			partida1.JuegoGuerrero(enUso,numero,input);
+			partida1.JuegoGuerrero(enUso,input,furia,espada2,numero);
 			
 		} else if(clase.equalsIgnoreCase("Enano")) {
 			System.out.println("¿Que personaje quieres usar?");
@@ -75,7 +79,7 @@ public class Principal {
 			Enano enUso=new Enano();
 			enUso=partida1.elegirEnano(nombre,hacha1);
 			System.out.println("¡Personaje elegido!");
-			partida1.JuegoEnano(enUso,numero,input);
+			partida1.JuegoEnano(enUso,input,lanzamiento,hacha2,numero);
 			
 		} else if(clase.equalsIgnoreCase("Arquero")) {
 			System.out.println("¿Que personaje quieres usar?");
@@ -84,7 +88,7 @@ public class Principal {
 			Arquero enUso=new Arquero();
 			enUso=partida1.elegirArquero(nombre,arco1);
 			System.out.println("¡Personaje elegido!");
-			partida1.JuegoArquero(enUso,numero,input);
+			partida1.JuegoArquero(enUso,input,flecha,arco2,numero);
 			
 		} else {
 			System.out.println("No existe esa clase");

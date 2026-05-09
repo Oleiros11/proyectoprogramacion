@@ -3,6 +3,7 @@ package clases;
 public class Arquero extends Personaje {
 	int vidaMax=40;
 	int vida=40;
+	int manaMax=60;
 	int mana=60;
 	int fuerza=10;
 	int defensa=7;
@@ -13,6 +14,7 @@ public class Arquero extends Personaje {
 		super(nombre, clase);
 		this.vidaMax=vidaMax;
 		this.vida=vida;
+		this.manaMax=manaMax;
 		this.mana=mana;
 		this.fuerza=fuerza;
 		this.defensa=defensa;
@@ -22,7 +24,9 @@ public class Arquero extends Personaje {
 
 	public Arquero() {
 		super();
+		this.vidaMax=vidaMax;
 		this.vida=vida;
+		this.manaMax=manaMax;
 		this.mana=mana;
 		this.fuerza=fuerza;
 		this.defensa=defensa;
@@ -86,6 +90,15 @@ public class Arquero extends Personaje {
 
 	public void setVidaMax(int vidaMax) {
 		this.vidaMax = vidaMax;
+	}
+	
+
+	public int getManaMax() {
+		return manaMax;
+	}
+
+	public void setManaMax(int manaMax) {
+		this.manaMax = manaMax;
 	}
 
 	@Override

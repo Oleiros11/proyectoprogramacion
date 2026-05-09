@@ -6,7 +6,7 @@ public class Goblin extends Enemigo{
 	int defensa=4;
 	int ataque=6;
 	int oroDado=15;
-	int expDada=50;
+	int expDada=250;
 	public Goblin(String nombre, String raza) {
 		super(nombre, raza);
 		this.vida = vida;
