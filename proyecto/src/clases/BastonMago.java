@@ -1,5 +1,6 @@
 package clases;
 
+//clase para el equipamiento del mago
 public class BastonMago extends Objeto{
 	String nombre="Bastón de jade";
 	int ataque=20;

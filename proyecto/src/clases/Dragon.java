@@ -1,5 +1,7 @@
 package clases;
 
+
+//clase para el tipo de enemigo Dragon 
 public class Dragon extends Enemigo{
 	int vida=200;
 	int fuerza=40;

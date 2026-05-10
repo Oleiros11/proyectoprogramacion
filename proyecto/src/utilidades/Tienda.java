@@ -11,11 +11,16 @@ import clases.Guerrero;
 import clases.HachaEnano;
 import clases.Mago;
 
+
+//clase tienda
+//cuando un personaje termina 3 rondas, es redirigido a su tienda correspoindiente 
 public class Tienda {
 	public static void entrarTiendaMago(Mago mago,BastonMago baston2, Scanner input) {
-		input.nextLine();
+		
 		if(baston2.getCantidad()==1) {
 			System.out.println("¡¡Bienvenido a la tienda!!");
+			System.out.println("Pulsa Enter para continuar");
+			input.nextLine();
 			System.out.println("Tenemos un bastón que igual te interesa");
 			System.out.println(baston2.getNombre());
 			System.out.println(baston2.getDescripcion());
@@ -37,14 +42,18 @@ public class Tienda {
 			}
 			System.out.println("¡Vuelva pronto!");
 		} else {
+			System.out.println("¡¡Bienvenido a la tienda!!");
+			System.out.println("Pulsa Enter para continuar");
+			input.nextLine();
 			System.out.println("No tenemos nada nuevo para ofrecerle, ¡vuelva pronto!");
 		}
 		System.out.println("¡Vida y mana recuperados!");
 	}
 	public static void entrarTiendaArquero(Arquero arquero, Arco arco2,Scanner input) {
-		input.nextLine();
 		if(arco2.getCantidad()==1) {
 			System.out.println("¡¡Bienvenido a la tienda!!");
+			System.out.println("Pulsa Enter para continuar");
+			input.nextLine();
 			System.out.println("Tenemos un arco que igual te interesa");
 			System.out.println(arco2.getNombre());
 			System.out.println(arco2.getDescripcion());
@@ -66,14 +75,19 @@ public class Tienda {
 			}
 			System.out.println("¡Vuelva pronto!");
 		} else {
+			System.out.println("¡¡Bienvenido a la tienda!!");
+			System.out.println("Pulsa Enter para continuar");
+			input.nextLine();
 			System.out.println("No tenemos nada nuevo para ofrecerle, ¡vuelva pronto!");
 		}
 		System.out.println("¡Vida y mana recuperados!");
 	}
 	public static void entrarTiendaGuerrero(Guerrero guerrero, EspadaGuerrero espada2,Scanner input) {
-		input.nextLine();
+		
 		if(espada2.getCantidad()==1) {
 			System.out.println("¡¡Bienvenido a la tienda!!");
+			System.out.println("Pulsa Enter para continuar");
+			input.nextLine();
 			System.out.println("Tenemos una espada que igual te interesa");
 			System.out.println("Pero ten cuidado, ¡pesa mucho!");
 			System.out.println(espada2.getNombre());
@@ -96,14 +110,19 @@ public class Tienda {
 			}
 			System.out.println("¡Vuelva pronto!");
 		} else {
+			System.out.println("¡¡Bienvenido a la tienda!!");
+			System.out.println("Pulsa Enter para continuar");
+			input.nextLine();
 			System.out.println("No tenemos nada nuevo para ofrecerle, ¡vuelva pronto!");
 		}
 		System.out.println("¡Vida y mana recuperados!");
 	}
 	public static void entrarTiendaEnano(Enano enano, HachaEnano hacha2,Scanner input) {
-		input.nextLine();
+		
 		if(hacha2.getCantidad()==1) {
 			System.out.println("¡¡Bienvenido a la tienda!!");
+			System.out.println("Pulsa Enter para continuar");
+			input.nextLine();
 			System.out.println("Tenemos un hacha que igual te interesa");
 			System.out.println(hacha2.getNombre());
 			System.out.println(hacha2.getDescripcion());
@@ -125,6 +144,9 @@ public class Tienda {
 			}
 			System.out.println("¡Vuelva pronto!");
 		} else {
+			System.out.println("¡¡Bienvenido a la tienda!!");
+			System.out.println("Pulsa Enter para continuar");
+			input.nextLine();
 			System.out.println("No tenemos nada nuevo para ofrecerle, ¡vuelva pronto!");
 		}
 		System.out.println("¡Vida y mana recuperados!");

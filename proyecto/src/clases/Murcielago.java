@@ -1,5 +1,7 @@
 package clases;
 
+
+//clase para el tipo de enemigo murcielago 
 public class Murcielago extends Enemigo{
 	int vida=40;
 	int fuerza=20;

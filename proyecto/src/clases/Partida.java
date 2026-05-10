@@ -1215,8 +1215,8 @@ public class Partida {
 					Dragon dragon=new Dragon("Dragon","Dragon");
 					System.out.println("¡Ha aparecido un Dragon enemigo!");
 					System.out.println(" Dragon dice lo siguiente");
-					System.out.println("\\\\033[3mEl¿Osas adentrarte en mi guarida y robar mis tesoros?\\\\033[0m");
-					System.out.println("\\\\\\\\033[3m¡PREPARATE A MORIR!\\\\033[0m");
+					System.out.println("¿Osas adentrarte en mi guarida y robar mis tesoros?");
+					System.out.println("¡PREPARATE A MORIR!");
 					System.out.println("Tiemblas de miedo, pero no retrocedes");
 					do {
 						System.out.println("¿Que quieres hacer?");
@@ -1399,7 +1399,9 @@ public class Partida {
 								System.out.println(enUso.getHabilidad());
 								String usar=input.nextLine();
 								if(usar.equalsIgnoreCase("S")) {
-									damage=furia.getDamage()-goblin.getVida();
+									damage=furia.getDamage()-goblin.getDefensa();
+									enUso.setMana(enUso.getMana()-furia.getCosteMana());
+									goblin.setVida(goblin.getVida()-damage);
 									System.out.println("Ha hecho "+damage+"puntos de daño");
 								}
 								if(goblin.getVida()<=0) {
@@ -1452,7 +1454,7 @@ public class Partida {
 						do {
 							System.out.println("¿Que quieres hacer?");
 							System.out.println("1.- Atacar");
-							System.out.println("2.- Hechizos");
+							System.out.println("2.- Habilidades");
 							System.out.println("3.- Estatus");
 							opcion=input.nextInt();
 							if(opcion==1) {
@@ -1501,14 +1503,16 @@ public class Partida {
 								}
 							} else if (opcion==2) {
 								if(enUso.getHabilidad()==null) {
-									System.out.println("No tienes hechizos");
+									System.out.println("No tienes habilidades");
 								} else {
 									input.nextLine();
 									System.out.println("¿Quieres usar el siguiente hechizo?(S/N)");
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=furia.getDamage()-murcielago.getVida();
+										damage=furia.getDamage()-murcielago.getDefensa();
+										enUso.setMana(enUso.getMana()-furia.getCosteMana());
+										murcielago.setVida(murcielago.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(murcielago.getVida()<=0) {
@@ -1617,14 +1621,16 @@ public class Partida {
 								}
 							} else if(opcion==2) {
 								if(enUso.getHabilidad()==null) {
-									System.out.println("No tienes hechizos");
+									System.out.println("No tienes habilidades");
 								} else {
 									input.nextLine();
-									System.out.println("¿Quieres usar el siguiente hechizo?(S/N)");
+									System.out.println("¿Quieres usar la siguiente habilidad?(S/N)");
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=furia.getDamage()-goblin.getVida();
+										damage=furia.getDamage()-goblin.getDefensa();
+										enUso.setMana(enUso.getMana()-furia.getCosteMana());
+										goblin.setVida(goblin.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(goblin.getVida()<=0) {
@@ -1732,7 +1738,9 @@ public class Partida {
 										System.out.println(enUso.getHabilidad());
 										String usar=input.nextLine();
 										if(usar.equalsIgnoreCase("S")) {
-											damage=furia.getDamage()-murcielago.getVida();
+											damage=furia.getDamage()-murcielago.getDefensa();
+											enUso.setMana(enUso.getMana()-furia.getCosteMana());
+											murcielago.setVida(murcielago.getVida()-damage);
 											System.out.println("Ha hecho "+damage+"puntos de daño");
 										}
 										if(murcielago.getVida()<=0) {
@@ -1846,7 +1854,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=furia.getDamage()-murcielago.getVida();
+										damage=furia.getDamage()-murcielago.getDefensa();
+										enUso.setMana(enUso.getMana()-furia.getCosteMana());
+										murcielago.setVida(murcielago.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(murcielago.getVida()<=0) {
@@ -1953,7 +1963,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=furia.getDamage()-orco.getVida();
+										damage=furia.getDamage()-orco.getDefensa();
+										enUso.setMana(enUso.getMana()-furia.getCosteMana());
+										orco.setVida(orco.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(orco.getVida()<=0) {
@@ -2066,7 +2078,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=furia.getDamage()-murcielago.getVida();
+										damage=furia.getDamage()-murcielago.getDefensa();
+										enUso.setMana(enUso.getMana()-furia.getCosteMana());
+										murcielago.setVida(murcielago.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(murcielago.getVida()<=0) {
@@ -2173,7 +2187,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=furia.getDamage()-orco.getVida();
+										damage=furia.getDamage()-orco.getDefensa();
+										enUso.setMana(enUso.getMana()-furia.getCosteMana());
+										orco.setVida(orco.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(orco.getVida()<=0) {
@@ -2280,7 +2296,9 @@ public class Partida {
 								System.out.println(enUso.getHabilidad());
 								String usar=input.nextLine();
 								if(usar.equalsIgnoreCase("S")) {
-									damage=furia.getDamage()-dragon.getVida();
+									damage=furia.getDamage()-dragon.getDefensa();
+									enUso.setMana(enUso.getMana()-furia.getCosteMana());
+									dragon.setVida(dragon.getVida()-damage);
 									System.out.println("Ha hecho "+damage+"puntos de daño");
 								}
 								if(dragon.getVida()<=0) {
@@ -2405,7 +2423,9 @@ public class Partida {
 								System.out.println(enUso.getHabilidad());
 								String usar=input.nextLine();
 								if(usar.equalsIgnoreCase("S")) {
-									damage=lanzamiento.getDamage()-goblin.getVida();
+									damage=lanzamiento.getDamage()-goblin.getDefensa();
+									enUso.setMana(enUso.getMana()-lanzamiento.getCosteMana());
+									goblin.setVida(goblin.getVida()-damage);
 									System.out.println("Ha hecho "+damage+"puntos de daño");
 								}
 								if(goblin.getVida()<=0) {
@@ -2514,7 +2534,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=lanzamiento.getDamage()-murcielago.getVida();
+										damage=lanzamiento.getDamage()-murcielago.getDefensa();
+										enUso.setMana(enUso.getMana()-lanzamiento.getCosteMana());
+										murcielago.setVida(murcielago.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(murcielago.getVida()<=0) {
@@ -2630,7 +2652,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=lanzamiento.getDamage()-goblin.getVida();
+										damage=lanzamiento.getDamage()-goblin.getDefensa();
+										enUso.setMana(enUso.getMana()-lanzamiento.getCosteMana());
+										goblin.setVida(goblin.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(goblin.getVida()<=0) {
@@ -2738,7 +2762,9 @@ public class Partida {
 										System.out.println(enUso.getHabilidad());
 										String usar=input.nextLine();
 										if(usar.equalsIgnoreCase("S")) {
-											damage=lanzamiento.getDamage()-murcielago.getVida();
+											damage=lanzamiento.getDamage()-murcielago.getDefensa();
+											enUso.setMana(enUso.getMana()-lanzamiento.getCosteMana());
+											murcielago.setVida(murcielago.getVida()-damage);
 											System.out.println("Ha hecho "+damage+"puntos de daño");
 										}
 										if(murcielago.getVida()<=0) {
@@ -2852,7 +2878,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=lanzamiento.getDamage()-murcielago.getVida();
+										damage=lanzamiento.getDamage()-murcielago.getDefensa();
+										enUso.setMana(enUso.getMana()-lanzamiento.getCosteMana());
+										murcielago.setVida(murcielago.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(murcielago.getVida()<=0) {
@@ -2959,7 +2987,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=lanzamiento.getDamage()-orco.getVida();
+										damage=lanzamiento.getDamage()-orco.getDefensa();
+										enUso.setMana(enUso.getMana()-lanzamiento.getCosteMana());
+										orco.setVida(orco.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(orco.getVida()<=0) {
@@ -3072,7 +3102,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=lanzamiento.getDamage()-murcielago.getVida();
+										damage=lanzamiento.getDamage()-murcielago.getDefensa();
+										enUso.setMana(enUso.getMana()-lanzamiento.getCosteMana());
+										murcielago.setVida(murcielago.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(murcielago.getVida()<=0) {
@@ -3179,7 +3211,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=lanzamiento.getDamage()-orco.getVida();
+										damage=lanzamiento.getDamage()-orco.getDefensa();
+										enUso.setMana(enUso.getMana()-lanzamiento.getCosteMana());
+										orco.setVida(orco.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(orco.getVida()<=0) {
@@ -3286,7 +3320,9 @@ public class Partida {
 								System.out.println(enUso.getHabilidad());
 								String usar=input.nextLine();
 								if(usar.equalsIgnoreCase("S")) {
-									damage=lanzamiento.getDamage()-dragon.getVida();
+									damage=lanzamiento.getDamage()-dragon.getDefensa();
+									enUso.setMana(enUso.getMana()-lanzamiento.getCosteMana());
+									dragon.setVida(dragon.getVida()-damage);
 									System.out.println("Ha hecho "+damage+"puntos de daño");
 								}
 								if(dragon.getVida()<=0) {
@@ -3412,7 +3448,9 @@ public class Partida {
 								System.out.println(enUso.getHabilidad());
 								String usar=input.nextLine();
 								if(usar.equalsIgnoreCase("S")) {
-									damage=flecha.getDamage()-goblin.getVida();
+									damage=flecha.getDamage()-goblin.getDefensa();
+									enUso.setMana(enUso.getMana()-flecha.getCosteMana());
+									goblin.setVida(goblin.getVida()-damage);
 									System.out.println("Ha hecho "+damage+"puntos de daño");
 								}
 								if(goblin.getVida()<=0) {
@@ -3523,7 +3561,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=flecha.getDamage()-murcielago.getVida();
+										damage=flecha.getDamage()-murcielago.getDefensa();
+										enUso.setMana(enUso.getMana()-flecha.getCosteMana());
+										murcielago.setVida(murcielago.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(murcielago.getVida()<=0) {
@@ -3641,7 +3681,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=flecha.getDamage()-goblin.getVida();
+										damage=flecha.getDamage()-goblin.getDefensa();
+										enUso.setMana(enUso.getMana()-flecha.getCosteMana());
+										goblin.setVida(goblin.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(goblin.getVida()<=0) {
@@ -3751,7 +3793,9 @@ public class Partida {
 										System.out.println(enUso.getHabilidad());
 										String usar=input.nextLine();
 										if(usar.equalsIgnoreCase("S")) {
-											damage=flecha.getDamage()-murcielago.getVida();
+											damage=flecha.getDamage()-murcielago.getDefensa();
+											enUso.setMana(enUso.getMana()-flecha.getCosteMana());
+											murcielago.setVida(murcielago.getVida()-damage);
 											System.out.println("Ha hecho "+damage+"puntos de daño");
 										}
 										if(murcielago.getVida()<=0) {
@@ -3867,7 +3911,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=flecha.getDamage()-murcielago.getVida();
+										damage=flecha.getDamage()-murcielago.getDefensa();
+										enUso.setMana(enUso.getMana()-flecha.getCosteMana());
+										murcielago.setVida(murcielago.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(murcielago.getVida()<=0) {
@@ -3976,7 +4022,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=flecha.getDamage()-orco.getVida();
+										damage=flecha.getDamage()-orco.getDefensa();
+										enUso.setMana(enUso.getMana()-flecha.getCosteMana());
+										orco.setVida(orco.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(orco.getVida()<=0) {
@@ -4091,7 +4139,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=flecha.getDamage()-murcielago.getVida();
+										damage=flecha.getDamage()-murcielago.getDefensa();
+										enUso.setMana(enUso.getMana()-flecha.getCosteMana());
+										murcielago.setVida(murcielago.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(murcielago.getVida()<=0) {
@@ -4200,7 +4250,9 @@ public class Partida {
 									System.out.println(enUso.getHabilidad());
 									String usar=input.nextLine();
 									if(usar.equalsIgnoreCase("S")) {
-										damage=flecha.getDamage()-orco.getVida();
+										damage=flecha.getDamage()-orco.getDefensa();
+										enUso.setMana(enUso.getMana()-flecha.getCosteMana());
+										orco.setVida(orco.getVida()-damage);
 										System.out.println("Ha hecho "+damage+"puntos de daño");
 									}
 									if(orco.getVida()<=0) {
@@ -4309,7 +4361,9 @@ public class Partida {
 								System.out.println(enUso.getHabilidad());
 								String usar=input.nextLine();
 								if(usar.equalsIgnoreCase("S")) {
-									damage=flecha.getDamage()-dragon.getVida();
+									damage=flecha.getDamage()-dragon.getDefensa();
+									enUso.setMana(enUso.getMana()-flecha.getCosteMana());
+									dragon.setVida(dragon.getVida()-damage);
 									System.out.println("Ha hecho "+damage+"puntos de daño");
 								}
 								if(dragon.getVida()<=0) {

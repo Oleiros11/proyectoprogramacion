@@ -1,5 +1,7 @@
 package clases;
 
+
+//clase con las estadisticas comunes de todos los enemgios 
 public class Enemigo {
 	String nombre;
 	String raza;

@@ -1,5 +1,7 @@
 package clases;
 
+
+//clase para el personaje de clase guerrero
 public class Guerrero extends Personaje{
 	int vidaMax=50;
 	int vida=50;

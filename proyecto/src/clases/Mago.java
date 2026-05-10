@@ -1,5 +1,7 @@
 package clases;
 
+
+//clase para el personaje de clase mago
 public class Mago extends Personaje{
 	int vidaMax=30;
 	int vida=30;

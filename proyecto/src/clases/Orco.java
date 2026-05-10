@@ -1,5 +1,7 @@
 package clases;
 
+
+//clase para el tipo de enemigo Orco
 public class Orco extends Enemigo{
 	int vida=100;
 	int fuerza=20;

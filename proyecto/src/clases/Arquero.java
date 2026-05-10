@@ -1,5 +1,7 @@
 package clases;
 
+
+//clase para el personaje de clase arquero
 public class Arquero extends Personaje {
 	int vidaMax=40;
 	int vida=40;

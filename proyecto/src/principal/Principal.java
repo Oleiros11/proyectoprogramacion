@@ -1,5 +1,6 @@
 package principal;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import clases.Arco;
@@ -15,7 +16,7 @@ import clases.Mago;
 import clases.Partida;
 
 public class Principal {
-
+		//Enlace del repositorio de GitHub: https://github.com/Oleiros11/proyectoprogramacion
 	public static void main(String[] args) {
 		//elementos que tienen que ser creados antes de empezar el juego
 		Scanner input=new Scanner(System.in);
@@ -41,11 +42,16 @@ public class Principal {
 		int numero=0;
 		//empieza la aplicación
 		do {
+			//control de excepcion para que no se rompa
+			//el programa cuando se introduce un dato
+			//del tipo erróneo
+			try {
 		System.out.println("¿Que quieres hacer?");
 		System.out.println("1.- Jugar");
 		System.out.println("2.- Crear personaje");
 		System.out.println("3.- Ver personajes");
 		System.out.println("4.- Borrar personajes");
+		System.out.println("5.- Cerrar el juego");
 		
 		numero=input.nextInt();
 		switch (numero){
@@ -121,6 +127,13 @@ public class Principal {
 		System.out.println("Personaje eliminado");
 		break;
 		
+			case 5:
+		System.out.println("Cerrando el juego");
+			break;
+		
+			default: 
+		System.out.println("Ninguna opcion selecionada, introduzca de nuevo");
+		
 		
 		
 			
@@ -143,7 +156,12 @@ public class Principal {
 		
 		
 		}
-		} while (numero!=20);
+			} catch(InputMismatchException e) {
+				System.out.println("Se ha introducido un tipo de dato erroneo");
+				System.out.println("Por seguridad, se va a reiniciar la aplicacion");
+				input.nextLine();
+			}
+		} while (numero<5);
 		input.close();
 	}
 

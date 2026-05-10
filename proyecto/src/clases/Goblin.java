@@ -1,5 +1,7 @@
 package clases;
 
+
+//clase para el tipo de enemigo goblin
 public class Goblin extends Enemigo{
 	int vida=20;
 	int fuerza=2;

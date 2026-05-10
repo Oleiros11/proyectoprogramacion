@@ -1,5 +1,7 @@
 package clases;
 
+
+//estadisticas base para todos los personajes 
 public class Personaje {
 	String nombre;
 	String clase;
