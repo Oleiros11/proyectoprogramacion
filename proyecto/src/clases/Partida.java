@@ -2243,8 +2243,8 @@ public class Partida {
 					Dragon dragon=new Dragon("Dragon","Dragon");
 					System.out.println("¡Ha aparecido un Dragon enemigo!");
 					System.out.println(" Dragon dice lo siguiente");
-					System.out.println("\\\\033[3mEl¿Osas adentrarte en mi guarida y robar mis tesoros?\\\\033[0m");
-					System.out.println("\\\\\\\\033[3m¡PREPARATE A MORIR!\\\\033[0m");
+					System.out.println("¿Osas adentrarte en mi guarida y robar mis tesoros?");
+					System.out.println("¡PREPARATE A MORIR!");
 					System.out.println("Tiemblas de miedo, pero no retrocedes");
 					do {
 						System.out.println("¿Que quieres hacer?");
@@ -3267,8 +3267,8 @@ public class Partida {
 					Dragon dragon=new Dragon("Dragon","Dragon");
 					System.out.println("¡Ha aparecido un Dragon enemigo!");
 					System.out.println(" Dragon dice lo siguiente");
-					System.out.println("\\\\033[3mEl¿Osas adentrarte en mi guarida y robar mis tesoros?\\\\033[0m");
-					System.out.println("\\\\\\\\033[3m¡PREPARATE A MORIR!\\\\033[0m");
+					System.out.println("¿Osas adentrarte en mi guarida y robar mis tesoros?");
+					System.out.println("¡PREPARATE A MORIR!");
 					System.out.println("Tiemblas de miedo, pero no retrocedes");
 					do {
 						System.out.println("¿Que quieres hacer?");
@@ -4307,8 +4307,8 @@ public class Partida {
 					Dragon dragon=new Dragon("Dragon","Dragon");
 					System.out.println("¡Ha aparecido un Dragon enemigo!");
 					System.out.println(" Dragon dice lo siguiente");
-					System.out.println("\\\\033[3mEl¿Osas adentrarte en mi guarida y robar mis tesoros?\\\\033[0m");
-					System.out.println("\\\\\\\\033[3m¡PREPARATE A MORIR!\\\\033[0m");
+					System.out.println("¿Osas adentrarte en mi guarida y robar mis tesoros?");
+					System.out.println("¡PREPARATE A MORIR!");
 					System.out.println("Tiemblas de miedo, pero no retrocedes");
 					do {
 						System.out.println("¿Que quieres hacer?");
